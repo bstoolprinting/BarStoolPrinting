@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "118973543320",
+    "firebase_url": "https://barstoolprinting-34182.firebaseio.com",
+    "project_id": "barstoolprinting-34182",
+    "storage_bucket": "barstoolprinting-34182.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118973543320:android:2cdc4ecf008591fb",
+        "android_client_info": {
+          "package_name": "com.example.barstoolprinting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118973543320-2sfj3i8jvr8idluc74b133v32i8ojvcg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.barstoolprinting",
+            "certificate_hash": "10b7a3085e790f95d995af29ae95e6f8958c561e"
+          }
+        },
+        {
+          "client_id": "118973543320-qgc8mij3d6pb7ir7d4t5qn3i5hjqkfu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALJu3HhFJoMF_xQPj0A6MF2gBJ0PJXdus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118973543320-qgc8mij3d6pb7ir7d4t5qn3i5hjqkfu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

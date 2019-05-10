@@ -24,16 +24,25 @@
         android:layout_toRightOf="@+id/button_choose_image"
         android:background="@color/colorPrimary"
         android:gravity="right"
-        android:hint="Enter description"
+        android:hint="Enter name"
         android:textColor="@color/colorText" />
+
+    <EditText
+        android:id="@+id/edit_text_file_description"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/edit_text_file_name"
+        android:hint="Enter description"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorText"/>
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="383dp"
+        android:layout_height="469dp"
         android:layout_above="@id/progress_bar"
         android:layout_below="@id/edit_text_file_name"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="102dp" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -54,5 +63,21 @@
         android:text="Upload"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorText"/>
+
+    <TextView
+        android:id="@+id/text_view_show_uploads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_upload"
+        android:layout_alignTop="@+id/button_upload"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_toEndOf="@+id/button_upload"
+        android:layout_toRightOf="@+id/button_upload"
+        android:gravity="center"
+        android:text="Edit Uploads"
+        android:textSize="16sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"/>
 
 </RelativeLayout>

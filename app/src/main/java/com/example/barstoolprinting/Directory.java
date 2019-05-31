@@ -40,7 +40,7 @@ public class Directory extends AppCompatActivity {
         products.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Directory.this, ImagesActivity.class);
+                Intent switchActivity = new Intent(Directory.this, Products.class);
                 startActivity(switchActivity);
             }
         });

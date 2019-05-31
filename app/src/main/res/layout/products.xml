@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.barstoolprinting.ImagesActivity"
-    android:background="@color/colorAccent">
+    tools:context="com.example.barstoolprinting.Products"
+    android:background="@color/colorBackground">
 
     <ProgressBar
         android:id="@+id/progress_circle"

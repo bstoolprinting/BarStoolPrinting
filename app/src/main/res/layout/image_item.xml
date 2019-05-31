@@ -18,7 +18,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:text="Name"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextOnBackground"
             android:textSize="20sp" />
 
         <ImageView
@@ -35,7 +35,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:text="Description"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorTextOnPrimary"
             android:textSize="16sp" />
 
     </LinearLayout>

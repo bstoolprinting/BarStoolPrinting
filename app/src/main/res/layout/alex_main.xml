@@ -36,7 +36,7 @@
                 android:padding="@dimen/padding">
 
                 <Button
-                    android:id="@+id/admin_products"
+                    android:id="@+id/products"
                     android:layout_width="@dimen/button_width_size"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
@@ -45,7 +45,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_admin_products"
+                    android:text="@string/title_products"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
 
@@ -57,7 +57,7 @@
                 android:padding="@dimen/padding">
 
                 <Button
-                    android:id="@+id/admin_about"
+                    android:id="@+id/about"
                     android:layout_width="@dimen/button_width_size"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
@@ -66,7 +66,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_admin_about"
+                    android:text="@string/title_about"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
         </LinearLayout>
@@ -86,7 +86,7 @@
                 android:padding="@dimen/padding">
 
                 <Button
-                    android:id="@+id/admin_join"
+                    android:id="@+id/join"
                     android:layout_width="@dimen/button_width_size"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
@@ -95,7 +95,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_admin_join"
+                    android:text="@string/title_join"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
 
@@ -107,7 +107,7 @@
                 android:padding="@dimen/padding">
 
                 <Button
-                    android:id="@+id/admin_vendors"
+                    android:id="@+id/vendors"
                     android:layout_width="@dimen/button_width_size"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
@@ -116,7 +116,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_admin_vendors"
+                    android:text="@string/title_vendors"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
         </LinearLayout>
@@ -130,12 +130,12 @@
         android:padding="@dimen/padding">
 
         <Button
-            android:id="@+id/home"
+            android:id="@+id/admin"
             android:layout_width="@dimen/small_button_width_size"
             android:layout_height="@dimen/small_button_height_size"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/orange_button_pressed"
             android:padding="@dimen/padding"
-            android:text="@string/title_home"
+            android:text="@string/title_admin"
             android:textColor="@color/colorTextOnPrimary" />
     </LinearLayout>
 </LinearLayout>

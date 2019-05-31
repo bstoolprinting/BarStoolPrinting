@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorBackground"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -13,7 +13,7 @@
         android:text="Visit Our Etsy Shop"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/products"
@@ -22,7 +22,7 @@
         android:text="Products"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/about"
@@ -31,7 +31,7 @@
         android:text="About Us"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/join"
@@ -40,7 +40,7 @@
         android:text="Join Our Mailing List"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/contact"
@@ -49,7 +49,7 @@
         android:text="Contact Us"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/shows"
@@ -58,7 +58,7 @@
         android:text="Shows"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/vendors"
@@ -67,7 +67,7 @@
         android:text="Vendors"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/fundraising"
@@ -76,7 +76,7 @@
         android:text="Fundraising"
         android:layout_margin="10dp"
         android:background="@color/colorPrimary"
-        android:textColor="@color/colorText"/>
+        android:textColor="@color/colorTextOnBackground"/>
 
     <Button
         android:id="@+id/admin"
@@ -85,6 +85,6 @@
         android:text="Admin"
         android:layout_margin="10dp"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorTextOnPrimary"/>
 
 </LinearLayout>

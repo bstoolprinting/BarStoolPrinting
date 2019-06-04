@@ -3,6 +3,7 @@
     package="com.example.barstoolprinting">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -18,7 +19,7 @@
         <activity android:name=".AdminProducts" />
         <activity android:name=".Vendors" />
         <activity android:name=".About" />
-        <activity android:name=".AlexMain">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Directory"
+            android:name=".AlexMain"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Admin"

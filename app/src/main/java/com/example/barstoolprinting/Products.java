@@ -53,7 +53,7 @@ public class Products extends AppCompatActivity implements EditImageAdapter.OnIt
         editor = settings.edit();
 
         //Retrieve the values
-        productDatas = settings.getStringSet(getResources().getString(R.string.productDatas), null);
+        productDatas = settings.getStringSet(getResources().getString(R.string.products_data), null);
 
         networkStatus = NetworkStatus.getInstance();
 

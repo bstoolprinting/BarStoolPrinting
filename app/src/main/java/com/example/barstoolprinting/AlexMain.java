@@ -46,8 +46,6 @@ public class AlexMain extends AppCompatActivity {
         }
 
         networkStatus = NetworkStatus.getInstance();
-        // This is done only once here in MainActivity
-        networkStatus.SetConnectivityManager((ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE));
 
         products = findViewById(R.id.products);
         products.setOnClickListener(new android.view.View.OnClickListener() {

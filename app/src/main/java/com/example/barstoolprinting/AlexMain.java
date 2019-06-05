@@ -1,18 +1,18 @@
 package com.example.barstoolprinting;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
+import com.squareup.picasso.Picasso;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,10 +22,14 @@ public class AlexMain extends AppCompatActivity {
     private SharedPreferences.Editor editor;
     private Set<String> joinList;
     private static NetworkStatus networkStatus;
-    private Button products;
-    private Button about;
-    private Button join;
-    private Button vendors;
+    private static Utility utility;
+    private ImageView banner;
+    private ImageButton products;
+    private ImageButton about;
+    private ImageButton join;
+    private ImageButton retailers;
+    private ImageButton shows;
+    private ImageButton fundraising;
     private Button admin;
 
     @Override
@@ -46,12 +50,15 @@ public class AlexMain extends AppCompatActivity {
         }
 
         networkStatus = NetworkStatus.getInstance();
+        utility = Utility.getInstance();
+
+        banner = findViewById(R.id.banner);
 
         products = findViewById(R.id.products);
         products.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, Products.class);
+                Intent switchActivity = new Intent(AlexMain.this, ProductsSDCard.class);
                 startActivity(switchActivity);
             }
         });
@@ -127,8 +134,26 @@ public class AlexMain extends AppCompatActivity {
             }
         });
 
-        vendors = findViewById(R.id.vendors);
-        vendors.setOnClickListener(new android.view.View.OnClickListener() {
+        retailers = findViewById(R.id.retailers);
+        retailers.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                Intent switchActivity = new Intent(AlexMain.this, Vendors.class);
+                startActivity(switchActivity);
+            }
+        });
+
+        shows = findViewById(R.id.shows);
+        shows.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                Intent switchActivity = new Intent(AlexMain.this, Vendors.class);
+                startActivity(switchActivity);
+            }
+        });
+
+        fundraising = findViewById(R.id.fundraising);
+        fundraising.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
                 Intent switchActivity = new Intent(AlexMain.this, Vendors.class);
@@ -176,5 +201,56 @@ public class AlexMain extends AppCompatActivity {
                 alertDialog.show();
             }
         });
+
+        setImages();
+    }
+    private void setImages(){
+        setImage(getResources().getString(R.string.banner_folder),
+            getResources().getString(R.string.banner_screen),
+            banner);
+
+        setButtonImage(getResources().getString(R.string.products_folder),
+                getResources().getString(R.string.products_button),
+                products);
+
+        setButtonImage(getResources().getString(R.string.about_folder),
+                getResources().getString(R.string.about_button),
+                about);
+
+        setButtonImage(getResources().getString(R.string.join_folder),
+                getResources().getString(R.string.join_button),
+                join);
+
+        setButtonImage(getResources().getString(R.string.retailers_folder),
+                getResources().getString(R.string.retailers_button),
+                retailers);
+
+        setButtonImage(getResources().getString(R.string.shows_folder),
+                getResources().getString(R.string.shows_button),
+                shows);
+
+        setButtonImage(getResources().getString(R.string.fundraising_folder),
+                getResources().getString(R.string.fundraising_button),
+                fundraising);
+    }
+
+    private void setImage(String folderName, String imageName, ImageView view) {
+        String uri = utility.getURIOfFileInInternalStorage(getApplicationContext(),
+                folderName,
+                imageName);
+
+        if(!uri.isEmpty()) {
+            Picasso.with(getApplicationContext()).load("file://" + uri).into(view);
+        }
+    }
+
+    private void setButtonImage(String folderName, String imageName, ImageView view) {
+        String uri = utility.getURIOfFileInInternalStorage(getApplicationContext(),
+                folderName,
+                imageName);
+
+        if(!uri.isEmpty()) {
+            Picasso.with(getApplicationContext()).load("file://" + uri).fit().into(view);
+        }
     }
 }

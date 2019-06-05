@@ -1,4 +1,4 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Deprecated;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.barstoolprinting.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

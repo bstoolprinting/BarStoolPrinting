@@ -61,7 +61,7 @@
         android:textColor="@color/colorTextOnBackground"/>
 
     <Button
-        android:id="@+id/vendors"
+        android:id="@+id/retailers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Vendors"

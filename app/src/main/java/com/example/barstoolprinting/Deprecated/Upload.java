@@ -1,4 +1,4 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Deprecated;
 
 import com.google.firebase.database.Exclude;
 

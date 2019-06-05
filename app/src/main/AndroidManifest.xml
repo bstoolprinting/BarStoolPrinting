@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".AdminVendors"></activity>
+        <activity android:name=".Admin" />
+        <activity android:name=".Category" />
+        <activity android:name=".ProductsSDCard" />
+        <activity android:name=".AdminVendors" />
         <activity android:name=".AdminJoin" />
         <activity android:name=".AdminAbout" />
         <activity android:name=".AdminProducts" />
@@ -22,19 +25,14 @@
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AlexMain"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".Admin"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".Products"
-            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AlexMain">
+            <intent-filter>
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

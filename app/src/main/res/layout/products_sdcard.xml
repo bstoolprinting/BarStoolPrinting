@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:padding="@dimen/padding_layout">
+            android:padding="@dimen/padding_layout"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -40,16 +41,17 @@
                 android:padding="@dimen/padding_button">
 
                 <ImageButton
-                    android:id="@+id/products"
+                    android:id="@+id/bottle"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
-                    android:textColor="@color/colorTextOnPrimary" />
+                    android:textColor="@color/colorTextOnPrimary"
+                    android:contentDescription="@string/bottle" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_text_max_height_size"
-                    android:text="@string/title_products"
+                    android:text="@string/title_bottle"
                     android:gravity="center"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
@@ -63,16 +65,17 @@
                 android:padding="@dimen/padding_button">
 
                 <ImageButton
-                    android:id="@+id/about"
+                    android:id="@+id/coasters"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
-                    android:textColor="@color/colorTextOnPrimary" />
+                    android:textColor="@color/colorTextOnPrimary"
+                    android:contentDescription="@string/coasters" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_text_max_height_size"
-                    android:text="@string/title_about"
+                    android:text="@string/title_coasters"
                     android:gravity="center"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
@@ -86,16 +89,17 @@
                 android:padding="@dimen/padding_button">
 
                 <ImageButton
-                    android:id="@+id/join"
+                    android:id="@+id/mugs"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
-                    android:textColor="@color/colorTextOnPrimary" />
+                    android:textColor="@color/colorTextOnPrimary"
+                    android:contentDescription="@string/mugs"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_text_max_height_size"
-                    android:text="@string/title_join"
+                    android:text="@string/title_mugs"
                     android:gravity="center"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
@@ -106,7 +110,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:padding="@dimen/padding_layout">
+            android:padding="@dimen/padding_layout"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -117,16 +122,17 @@
                 android:padding="@dimen/padding_button">
 
                 <ImageButton
-                    android:id="@+id/retailers"
+                    android:id="@+id/other"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
-                    android:textColor="@color/colorTextOnPrimary" />
+                    android:textColor="@color/colorTextOnPrimary"
+                    android:contentDescription="@string/other"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_text_max_height_size"
-                    android:text="@string/title_retailers"
+                    android:text="@string/title_other"
                     android:gravity="center"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
@@ -140,57 +146,28 @@
                 android:padding="@dimen/padding_button">
 
                 <ImageButton
-                    android:id="@+id/shows"
+                    android:id="@+id/photo"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_size"
                     android:background="@drawable/custom_button"
-                    android:textColor="@color/colorTextOnPrimary" />
+                    android:textColor="@color/colorTextOnPrimary"
+                    android:contentDescription="@string/photo"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_text_max_height_size"
-                    android:text="@string/title_shows"
-                    android:gravity="center"
-                    android:textColor="@color/colorTextOnBackground" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="@dimen/padding_button">
-
-                <ImageButton
-                    android:id="@+id/fundraising"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_height_size"
-                    android:background="@drawable/custom_button"
-                    android:textColor="@color/colorTextOnPrimary" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_text_max_height_size"
-                    android:text="@string/title_fundraising"
+                    android:text="@string/title_photo"
                     android:gravity="center"
                     android:textColor="@color/colorTextOnBackground" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom|center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/admin"
-            android:layout_width="@dimen/small_button_width_size"
-            android:layout_height="@dimen/small_button_height_size"
-            android:background="@drawable/orange_button_pressed"
-            android:text="@string/title_admin"
-            android:textColor="@color/colorTextOnPrimary" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navigation"
+        android:background="@color/colorPrimary" />
 </LinearLayout>

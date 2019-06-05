@@ -1,4 +1,4 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Deprecated;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.example.barstoolprinting.Admin;
+import com.example.barstoolprinting.R;
 
 
 public class Directory extends AppCompatActivity {

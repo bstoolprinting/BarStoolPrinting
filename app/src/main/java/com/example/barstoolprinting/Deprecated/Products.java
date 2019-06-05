@@ -1,4 +1,4 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Deprecated;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.barstoolprinting.NetworkStatus;
+import com.example.barstoolprinting.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

@@ -19,20 +19,20 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="@dimen/padding">
+        android:padding="@dimen/padding_layout">
 
         <Button
             android:id="@+id/button_choose_image"
             android:layout_width="@dimen/small_button_width_size"
             android:layout_height="@dimen/small_button_height_size"
             android:background="@drawable/custom_button"
-            android:padding="@dimen/padding"
+            android:padding="@dimen/padding_button"
             android:text="@string/choose_about_image"
             android:textColor="@color/colorTextOnPrimary" />
 
         <ImageView
             android:id="@+id/image_view"
-            android:padding="@dimen/padding"
+            android:padding="@dimen/padding_layout"
             android:layout_width="@dimen/choose_image_width"
             android:layout_height="@dimen/choose_image_height"/>
 
@@ -41,7 +41,7 @@
             android:layout_width="@dimen/small_button_width_size"
             android:layout_height="@dimen/small_button_height_size"
             android:background="@drawable/custom_button"
-            android:padding="@dimen/padding"
+            android:padding="@dimen/padding_button"
             android:text="@string/choose_set_image"
             android:textColor="@color/colorTextOnPrimary" />
     </LinearLayout>
@@ -51,14 +51,14 @@
         android:layout_height="match_parent"
         android:gravity="bottom|center"
         android:orientation="horizontal"
-        android:padding="@dimen/padding">
+        android:padding="@dimen/padding_layout">
 
         <Button
             android:id="@+id/back"
             android:layout_width="@dimen/small_button_width_size"
             android:layout_height="@dimen/small_button_height_size"
             android:background="@drawable/custom_button"
-            android:padding="@dimen/padding"
+            android:padding="@dimen/padding_button"
             android:text="@string/title_back"
             android:textColor="@color/colorTextOnPrimary" />
     </LinearLayout>

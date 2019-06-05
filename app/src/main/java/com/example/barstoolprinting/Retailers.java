@@ -9,17 +9,17 @@ import android.widget.ImageView;
 
 import java.io.File;
 
-public class Vendors extends AppCompatActivity {
+public class Retailers extends AppCompatActivity {
     private Button home;
     private ImageView vendors_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vendors);
+        setContentView(R.layout.retailers);
 
         vendors_text = findViewById(R.id.vendors_text);
-        File storageDir = Vendors.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File storageDir = Retailers.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         if(storageDir == null) throw new AssertionError("Cannot read " + Environment.DIRECTORY_PICTURES);
         String path = storageDir.getAbsolutePath();
         String fileName = path + getResources().getString(R.string.vendors_file_name);

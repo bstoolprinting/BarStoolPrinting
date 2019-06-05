@@ -138,7 +138,7 @@ public class AlexMain extends AppCompatActivity {
         retailers.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, Vendors.class);
+                Intent switchActivity = new Intent(AlexMain.this, Retailers.class);
                 startActivity(switchActivity);
             }
         });
@@ -147,7 +147,7 @@ public class AlexMain extends AppCompatActivity {
         shows.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, Vendors.class);
+                Intent switchActivity = new Intent(AlexMain.this, Retailers.class);
                 startActivity(switchActivity);
             }
         });
@@ -156,7 +156,7 @@ public class AlexMain extends AppCompatActivity {
         fundraising.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, Vendors.class);
+                Intent switchActivity = new Intent(AlexMain.this, Retailers.class);
                 startActivity(switchActivity);
             }
         });

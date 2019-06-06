@@ -1,4 +1,4 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Utilities;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.barstoolprinting.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ImageV
 
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.row_layout, parent, false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.item, parent, false);
         return new ImageViewHolder(v);
     }
 

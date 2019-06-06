@@ -12,36 +12,36 @@
             <LinearLayout style="@style/ButtonLayout">
 
                 <ImageButton
-                    android:id="@+id/bottle"
-                    android:contentDescription="@string/bottle"
+                    android:id="@+id/products"
+                    android:contentDescription="@string/products"
                     style="@style/ImageButton"/>
 
                 <TextView
-                    android:text="@string/title_bottle"
+                    android:text="@string/title_products"
                     style="@style/ButtonTextView"/>
             </LinearLayout>
 
             <LinearLayout style="@style/ButtonLayout">
 
                 <ImageButton
-                    android:id="@+id/coasters"
-                    android:contentDescription="@string/coasters"
+                    android:id="@+id/about"
+                    android:contentDescription="@string/about"
                     style="@style/ImageButton"/>
 
                 <TextView
-                    android:text="@string/title_coasters"
+                    android:text="@string/title_about"
                     style="@style/ButtonTextView"/>
             </LinearLayout>
 
             <LinearLayout style="@style/ButtonLayout">
 
                 <ImageButton
-                    android:id="@+id/mugs"
-                    android:contentDescription="@string/mugs"
+                    android:id="@+id/join"
+                    android:contentDescription="@string/join"
                     style="@style/ImageButton"/>
 
                 <TextView
-                    android:text="@string/title_mugs"
+                    android:text="@string/title_join"
                     style="@style/ButtonTextView"/>
             </LinearLayout>
         </LinearLayout>
@@ -51,24 +51,36 @@
             <LinearLayout style="@style/ButtonLayout">
 
                 <ImageButton
-                    android:id="@+id/other"
-                    android:contentDescription="@string/other"
+                    android:id="@+id/retailers"
+                    android:contentDescription="@string/retailers"
                     style="@style/ImageButton"/>
 
                 <TextView
-                    android:text="@string/title_other"
+                    android:text="@string/title_retailers"
                     style="@style/ButtonTextView"/>
             </LinearLayout>
 
             <LinearLayout style="@style/ButtonLayout">
 
                 <ImageButton
-                    android:id="@+id/photo"
-                    android:contentDescription="@string/photo"
+                    android:id="@+id/shows"
+                    android:contentDescription="@string/shows"
                     style="@style/ImageButton"/>
 
                 <TextView
-                    android:text="@string/title_photo"
+                    android:text="@string/title_shows"
+                    style="@style/ButtonTextView"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/ButtonLayout">
+
+                <ImageButton
+                    android:id="@+id/fundraising"
+                    android:contentDescription="@string/fundraising"
+                    style="@style/ImageButton"/>
+
+                <TextView
+                    android:text="@string/title_fundraising"
                     style="@style/ButtonTextView"/>
             </LinearLayout>
         </LinearLayout>

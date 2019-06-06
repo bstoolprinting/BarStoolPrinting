@@ -1,8 +1,7 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Utilities;
 
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.graphics.Bitmap;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -56,20 +55,6 @@ public class Utility {
             }
         }
         return mypath.getAbsolutePath();
-    }
-
-    public boolean isFileInInternalStorage(Context base, String directoryName, String fileName) {
-        ContextWrapper cw = new ContextWrapper(base);
-        File directory = cw.getDir(directoryName, Context.MODE_PRIVATE);
-
-        if(directory.isDirectory()){
-            for (File f : directory.listFiles()) {
-                if (f.isFile() && f.getName().contentEquals(fileName)) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     public String getURIOfFileInInternalStorage(Context base, String directoryName, String fileName) {

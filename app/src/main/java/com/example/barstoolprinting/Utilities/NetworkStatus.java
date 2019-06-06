@@ -1,4 +1,4 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Utilities;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;

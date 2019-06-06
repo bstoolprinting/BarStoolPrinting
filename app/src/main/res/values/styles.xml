@@ -8,4 +8,72 @@
         <item name="colorAccent">@color/colorBackground</item>
     </style>
 
+    <style name="RootLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="VerticalLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="ButtonsRowLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">@dimen/padding_layout</item>
+        <item name="android:baselineAligned">false</item>
+    </style>
+
+    <style name="ButtonLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/padding_button</item>
+    </style>
+
+    <style name="ImageButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height_size</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:textColor">@color/colorTextOnPrimary</item>
+    </style>
+
+    <style name="ButtonTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_text_max_height_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorTextOnBackground</item>
+    </style>
+
+    <style name="BottomNavigation">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="BigTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="FullScreenImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
 </resources>

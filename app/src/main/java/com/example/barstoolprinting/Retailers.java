@@ -1,43 +1,35 @@
 package com.example.barstoolprinting;
 
-import android.graphics.BitmapFactory;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-import java.io.File;
-
-public class Retailers extends AppCompatActivity {
-    private Button home;
-    private ImageView vendors_text;
+public class Retailers extends BaseActivity {
+    private TextView text;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.retailers);
+        setContentView(R.layout.picture);
 
-        vendors_text = findViewById(R.id.vendors_text);
-        File storageDir = Retailers.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        if(storageDir == null) throw new AssertionError("Cannot read " + Environment.DIRECTORY_PICTURES);
-        String path = storageDir.getAbsolutePath();
-        String fileName = path + getResources().getString(R.string.vendors_file_name);
-        File file = new File(fileName);
+        Initialize();
 
-        if(file.exists()){
-            vendors_text.setImageBitmap(BitmapFactory.decodeFile(fileName));
-        }
-        else {
-            vendors_text.setBackgroundResource(R.drawable.tbd);
+        image = findViewById(R.id.image);
+
+        boolean imageFound = setImage(getResources().getString(R.string.retailers_folder),
+                getResources().getString(R.string.retailers_screen),
+                image);
+
+        if(!imageFound){
+            image.setBackgroundResource(R.drawable.tbd);
         }
 
-        home = findViewById(R.id.home);
-        home.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                finish();
-            }
-        });
+        text = findViewById(R.id.text);
+        text.setText(getResources().getString(R.string.title_retailers));
+    }
+
+    protected void home(){
+        finish();
     }
 }

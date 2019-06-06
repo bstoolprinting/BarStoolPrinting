@@ -1,15 +1,9 @@
 package com.example.barstoolprinting;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 
 public class Admin extends AppCompatActivity {
@@ -56,7 +50,7 @@ public class Admin extends AppCompatActivity {
         admin_vendors.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Admin.this, AdminVendors.class);
+                Intent switchActivity = new Intent(Admin.this, AdminRetailers.class);
                 startActivity(switchActivity);
             }
         });

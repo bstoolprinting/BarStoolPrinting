@@ -22,12 +22,11 @@
     <string name="title_mugs">Mugs</string>
     <string name="title_other">Other</string>
     <string name="title_photo">Photo Slate</string>
+    <string name="title_vendors">Retailers</string>
     <string name="choose_about_image">Choose About Image</string>
     <string name="choose_retailers_image">Choose Retailers Image</string>
     <string name="choose_set_image">Set About Image</string>
     <string name="send_join">Send Join List</string>
-    <string name="about_file_name">About.png</string>
-    <string name="vendors_file_name">Vendors.png</string>
     <string name="joinList">joinList</string>
     <string name="products_data">productsData</string>
     <string name="root_folder">bar_stool_printing</string>
@@ -63,4 +62,10 @@
     <string name="mugs">mugs</string>
     <string name="other">other</string>
     <string name="photo">photo</string>
+    <string name="products">products</string>
+    <string name="about">about</string>
+    <string name="join">join</string>
+    <string name="retailers">retailers</string>
+    <string name="shows">shows</string>
+    <string name="fundraising">fundraising</string>
 </resources>

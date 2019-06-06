@@ -12,16 +12,19 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import com.example.barstoolprinting.Utilities.Utility;
+
 import java.io.File;
 
-public class SplashScreen extends AppCompatActivity {
+public class Loading extends AppCompatActivity {
     private static final int REQUEST_CODE_READ_EXTERNAL_STORAGE_PERMISSION = 1;
     private static Utility utility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splashscreen);
+        setContentView(R.layout.loading);
 
         utility = Utility.getInstance();
 
@@ -29,11 +32,11 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void askForReadPermission() {
-        int readExternalStoragePermission = ContextCompat.checkSelfPermission(SplashScreen.this, Manifest.permission.READ_EXTERNAL_STORAGE);
+        int readExternalStoragePermission = ContextCompat.checkSelfPermission(Loading.this, Manifest.permission.READ_EXTERNAL_STORAGE);
         if(readExternalStoragePermission!= PackageManager.PERMISSION_GRANTED)
         {
             // Request user to grant write external storage permission.
-            ActivityCompat.requestPermissions(SplashScreen.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_READ_EXTERNAL_STORAGE_PERMISSION);
+            ActivityCompat.requestPermissions(Loading.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_READ_EXTERNAL_STORAGE_PERMISSION);
         }
         else {
             save();
@@ -51,14 +54,14 @@ public class SplashScreen extends AppCompatActivity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     save();
                 } else {
-                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(SplashScreen.this);
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(Loading.this);
                     alertDialog.setTitle("Load SD card data");
                     alertDialog.setMessage("Are you sure you want to Bypass loading data from sdcard?");
                     alertDialog.setIcon(R.drawable.stool_logo_orange);
 
                     alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent switchActivity = new Intent(SplashScreen.this, AlexMain.class);
+                            Intent switchActivity = new Intent(Loading.this, Home.class);
                             startActivity(switchActivity);
                         }
                     });
@@ -155,7 +158,7 @@ public class SplashScreen extends AppCompatActivity {
                     rootFolderPath + " not found!", Toast.LENGTH_SHORT).show();
         }
 
-        Intent switchActivity = new Intent(SplashScreen.this, AlexMain.class);
+        Intent switchActivity = new Intent(Loading.this, Home.class);
         startActivity(switchActivity);
     }
 

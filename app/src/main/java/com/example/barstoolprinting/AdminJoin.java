@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.barstoolprinting.Utilities.NetworkStatus;
+
 import java.util.Set;
 
 public class AdminJoin extends AppCompatActivity {

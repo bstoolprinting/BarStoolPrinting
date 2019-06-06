@@ -2,44 +2,34 @@ package com.example.barstoolprinting;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import com.squareup.picasso.Picasso;
+
+import com.example.barstoolprinting.Utilities.NetworkStatus;
+
 import java.util.HashSet;
 import java.util.Set;
 
 
-public class AlexMain extends AppCompatActivity {
-    private SharedPreferences settings;
-    private SharedPreferences.Editor editor;
+public class Home extends BaseActivity {
     private Set<String> joinList;
-    private static NetworkStatus networkStatus;
-    private static Utility utility;
-    private ImageView banner;
     private ImageButton products;
     private ImageButton about;
     private ImageButton join;
     private ImageButton retailers;
     private ImageButton shows;
     private ImageButton fundraising;
-    private Button admin;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alex_main);
+        setContentView(R.layout.home);
 
-        settings = getSharedPreferences(getResources().getString(R.string.app_name), 0);
-        editor = settings.edit();
+        Initialize();
 
         //Retrieve the values
         if(settings.contains(getResources().getString(R.string.joinList))) {
@@ -49,16 +39,11 @@ public class AlexMain extends AppCompatActivity {
             joinList = new HashSet<String>();
         }
 
-        networkStatus = NetworkStatus.getInstance();
-        utility = Utility.getInstance();
-
-        banner = findViewById(R.id.banner);
-
         products = findViewById(R.id.products);
         products.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, ProductsSDCard.class);
+                Intent switchActivity = new Intent(Home.this, ProductsSDCard.class);
                 startActivity(switchActivity);
             }
         });
@@ -67,7 +52,7 @@ public class AlexMain extends AppCompatActivity {
         about.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, About.class);
+                Intent switchActivity = new Intent(Home.this, About.class);
                 startActivity(switchActivity);
             }
         });
@@ -76,11 +61,11 @@ public class AlexMain extends AppCompatActivity {
         join.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(final android.view.View v) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(AlexMain.this);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Home.this);
                 alertDialog.setTitle("Email");
                 alertDialog.setMessage("Please enter your email");
 
-                final EditText input = new EditText(AlexMain.this);
+                final EditText input = new EditText(Home.this);
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
@@ -138,7 +123,7 @@ public class AlexMain extends AppCompatActivity {
         retailers.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, Retailers.class);
+                Intent switchActivity = new Intent(Home.this, Retailers.class);
                 startActivity(switchActivity);
             }
         });
@@ -147,7 +132,7 @@ public class AlexMain extends AppCompatActivity {
         shows.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, Retailers.class);
+                Intent switchActivity = new Intent(Home.this, Shows.class);
                 startActivity(switchActivity);
             }
         });
@@ -156,59 +141,14 @@ public class AlexMain extends AppCompatActivity {
         fundraising.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(AlexMain.this, Retailers.class);
+                Intent switchActivity = new Intent(Home.this, Fundraising.class);
                 startActivity(switchActivity);
-            }
-        });
-
-        admin = findViewById(R.id.admin);
-        admin.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(final android.view.View v) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(AlexMain.this);
-                alertDialog.setTitle("PASSWORD");
-                alertDialog.setMessage("Enter Password");
-
-                final EditText input = new EditText(AlexMain.this);
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.MATCH_PARENT);
-                input.setLayoutParams(lp);
-                alertDialog.setView(input); // uncomment this line
-                alertDialog.setIcon(R.drawable.stool_logo_orange);
-
-                alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        String password = input.getText().toString();
-                        if (password.length() > 0) {
-                            if (password.contentEquals(getResources().getString(R.string.password))) {
-                                Intent switchActivity = new Intent(AlexMain.this, Admin.class);
-                                startActivity(switchActivity);
-                            } else {
-                                Toast.makeText(getApplicationContext(),
-                                        "Wrong Password!", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-                });
-
-                alertDialog.setNegativeButton("Cancel",  new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                alertDialog.show();
             }
         });
 
         setImages();
     }
     private void setImages(){
-        setImage(getResources().getString(R.string.banner_folder),
-            getResources().getString(R.string.banner_screen),
-            banner);
-
         setButtonImage(getResources().getString(R.string.products_folder),
                 getResources().getString(R.string.products_button),
                 products);
@@ -234,23 +174,5 @@ public class AlexMain extends AppCompatActivity {
                 fundraising);
     }
 
-    private void setImage(String folderName, String imageName, ImageView view) {
-        String uri = utility.getURIOfFileInInternalStorage(getApplicationContext(),
-                folderName,
-                imageName);
-
-        if(!uri.isEmpty()) {
-            Picasso.with(getApplicationContext()).load("file://" + uri).into(view);
-        }
-    }
-
-    private void setButtonImage(String folderName, String imageName, ImageView view) {
-        String uri = utility.getURIOfFileInInternalStorage(getApplicationContext(),
-                folderName,
-                imageName);
-
-        if(!uri.isEmpty()) {
-            Picasso.with(getApplicationContext()).load("file://" + uri).fit().into(view);
-        }
-    }
+    protected void home(){}
 }

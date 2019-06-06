@@ -5,4 +5,9 @@
         android:enabled="true"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Home" />
+    <item
+        android:id="@+id/admin"
+        android:enabled="true"
+        android:icon="@drawable/admin_icon"
+        android:title="Admin"/>
 </menu>

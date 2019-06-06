@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class About extends BaseActivity {
+public class Shows extends BaseActivity {
     private TextView text;
     private ImageView image;
 
@@ -17,16 +17,16 @@ public class About extends BaseActivity {
 
         image = findViewById(R.id.image);
 
-        boolean imageFound = setImage(getResources().getString(R.string.about_folder),
-                getResources().getString(R.string.about_screen),
+        boolean imageFound = setImage(getResources().getString(R.string.shows_folder),
+                getResources().getString(R.string.shows_screen),
                 image);
 
         if(!imageFound){
-            image.setBackgroundResource(R.drawable.about_text);
+            image.setBackgroundResource(R.drawable.tbd);
         }
 
         text = findViewById(R.id.text);
-        text.setText(getResources().getString(R.string.title_about));
+        text.setText(getResources().getString(R.string.title_shows));
     }
 
     protected void home(){

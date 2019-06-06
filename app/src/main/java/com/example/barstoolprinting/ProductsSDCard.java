@@ -9,27 +9,22 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.example.barstoolprinting.Utilities.Utility;
 import com.squareup.picasso.Picasso;
 
-public class ProductsSDCard extends AppCompatActivity {
-    private static Utility utility;
-    private ImageView banner;
+public class ProductsSDCard extends BaseActivity {
     private ImageButton bottle;
     private ImageButton coasters;
     private ImageButton mugs;
     private ImageButton other;
     private ImageButton photo;
-    private BottomNavigationView navigation;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.products_sdcard);
 
-        utility = Utility.getInstance();
-
-        banner = findViewById(R.id.banner);
+        Initialize();
 
         bottle = findViewById(R.id.bottle);
         bottle.setOnClickListener(new android.view.View.OnClickListener() {
@@ -80,32 +75,9 @@ public class ProductsSDCard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.home:
-                        finish();
-                        return true;
-                    default: return true;
-                }
-            }
-        });
-
-        setImage(getResources().getString(R.string.banner_folder),
-                getResources().getString(R.string.banner_screen),
-                banner);
     }
 
-    private void setImage(String folderName, String imageName, ImageView view) {
-        String uri = utility.getURIOfFileInInternalStorage(getApplicationContext(),
-                folderName,
-                imageName);
-
-        if(!uri.isEmpty()) {
-            Picasso.with(getApplicationContext()).load("file://" + uri).into(view);
-        }
+    protected void home(){
+        finish();
     }
 }

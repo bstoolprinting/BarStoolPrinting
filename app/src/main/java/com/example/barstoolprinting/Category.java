@@ -10,12 +10,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.example.barstoolprinting.Utilities.CategoryAdapter;
+import com.example.barstoolprinting.Utilities.Utility;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Category extends AppCompatActivity {
     private static long FINISH_TIMEOUT_IN_MILLIS = 30000;
-    private static long ALERT_TIMEOUT_IN_MILLIS = 5000;
+    private static long ALERT_TIMEOUT_IN_MILLIS = 60000;
     private String categoryPath;
     private static Utility utility;
     private List<String> pathsToImages;

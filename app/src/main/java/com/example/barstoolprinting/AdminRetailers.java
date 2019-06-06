@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class AdminVendors extends AppCompatActivity {
+public class AdminRetailers extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private Button mButtonChooseImage;
     private ImageView mImageView;
@@ -31,7 +31,7 @@ public class AdminVendors extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_vendors);
+        setContentView(R.layout.admin_retailers);
 
         mButtonChooseImage = findViewById(R.id.button_choose_image);
         mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
@@ -47,12 +47,12 @@ public class AdminVendors extends AppCompatActivity {
         mButtonSetImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File storageDir = AdminVendors.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+                File storageDir = AdminRetailers.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
                 if(storageDir == null) throw new AssertionError("Cannot read " + Environment.DIRECTORY_PICTURES);
                 String path = storageDir.getAbsolutePath();
-                String fileName = path + getResources().getString(R.string.vendors_file_name);
+                String fileName = path + getResources().getString(R.string.retailers_screen);
 
-                Picasso.with(AdminVendors.this)
+                Picasso.with(AdminRetailers.this)
                         .load(mImageUri.toString())
                         .into(setImage(fileName));
 

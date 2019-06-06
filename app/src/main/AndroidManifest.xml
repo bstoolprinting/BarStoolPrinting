@@ -16,19 +16,21 @@
         <activity android:name=".Admin" />
         <activity android:name=".Category" />
         <activity android:name=".ProductsSDCard" />
-        <activity android:name=".AdminVendors" />
+        <activity android:name=".AdminRetailers" />
         <activity android:name=".AdminJoin" />
         <activity android:name=".AdminAbout" />
         <activity android:name=".AdminProducts" />
         <activity android:name=".Retailers" />
         <activity android:name=".About" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Shows" />
+        <activity android:name=".Fundraising" />
+        <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlexMain">
+        <activity android:name=".Home">
             <intent-filter>
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>

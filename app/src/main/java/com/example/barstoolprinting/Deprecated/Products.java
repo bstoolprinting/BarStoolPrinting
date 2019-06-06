@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.barstoolprinting.NetworkStatus;
+import com.example.barstoolprinting.Utilities.NetworkStatus;
 import com.example.barstoolprinting.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;

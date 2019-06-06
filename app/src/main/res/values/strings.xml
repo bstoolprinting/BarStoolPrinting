@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">BarStoolPrinting</string>
     <string name="password">z</string>
-    <string name="url">https://etsy.me/2J7vSio</string>
-    <string name="myEmail">bstoolprinting@gmail.com</string>
+    <string name="etsy_url">https://etsy.me/2J7vSio</string>
+    <string name="app_email">bstoolprinting@gmail.com</string>
     <string name="title_banner">Banner</string>
     <string name="title_products">Products</string>
     <string name="title_admin_products">Admin Products</string>
@@ -33,23 +33,12 @@
     <string name="button_folder">button</string>
     <string name="screen_folder">screen</string>
     <string name="products_folder">products</string>
-    <string name="products_button">products_button.png</string>
     <string name="about_folder">about</string>
-    <string name="about_screen">about_screen.png</string>
-    <string name="about_button">about_button.png</string>
     <string name="join_folder">join</string>
-    <string name="join_button">join_button.png</string>
     <string name="banner_folder">banner</string>
-    <string name="banner_screen">banner_screen.png</string>
     <string name="fundraising_folder">fundraising</string>
-    <string name="fundraising_screen">fundraising_screen.png</string>
-    <string name="fundraising_button">fundraising_button.png</string>
     <string name="retailers_folder">retailers</string>
-    <string name="retailers_screen">retailers_screen.png</string>
-    <string name="retailers_button">retailers_button.png</string>
     <string name="shows_folder">shows</string>
-    <string name="shows_screen">shows_screen.png</string>
-    <string name="shows_button">shows_button.png</string>
     <string name="categories_folder">categories</string>
     <string name="bottle_openers_folder">bottle_openers</string>
     <string name="coasters_folder">coasters</string>

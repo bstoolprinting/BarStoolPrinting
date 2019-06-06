@@ -17,8 +17,8 @@ public class Shows extends BaseActivity {
 
         image = findViewById(R.id.image);
 
-        boolean imageFound = setImage(getResources().getString(R.string.shows_folder),
-                getResources().getString(R.string.shows_screen),
+        boolean imageFound = setImage(getResources().getString(R.string.shows_folder) + "/" +
+                        getResources().getString(R.string.screen_folder),
                 image);
 
         if(!imageFound){

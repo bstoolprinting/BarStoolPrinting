@@ -33,8 +33,8 @@ abstract class BaseActivity extends AppCompatActivity {
         banner = findViewById(R.id.banner);
         navigation = findViewById(R.id.navigation);
 
-        setImage(getResources().getString(R.string.banner_folder),
-                getResources().getString(R.string.banner_screen),
+        setImage(getResources().getString(R.string.banner_folder) + "/" +
+                        getResources().getString(R.string.button_folder),
                 banner);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -100,10 +100,20 @@ abstract class BaseActivity extends AppCompatActivity {
         return false;
     }
 
-    protected boolean setButtonImage(String folderName, String imageName, ImageView view) {
-        String uri = utility.getURIOfFileInInternalStorage(BaseActivity.this,
-                folderName,
-                imageName);
+    protected boolean setImage(String folderName, ImageView view) {
+        String uri = utility.getURIOfFirstFileInInternalStorage(BaseActivity.this,
+                folderName);
+
+        if(!uri.isEmpty()) {
+            Picasso.with(BaseActivity.this).load("file://" + uri).into(view);
+            return true;
+        }
+        return false;
+    }
+
+    protected boolean setButtonImage(String folderName, ImageView view) {
+        String uri = utility.getURIOfFirstFileInInternalStorage(BaseActivity.this,
+                folderName);
 
         if(!uri.isEmpty()) {
             Picasso.with(BaseActivity.this).load("file://" + uri).fit().into(view);

@@ -16,8 +16,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.barstoolprinting.Deprecated.Products;
-import com.example.barstoolprinting.Deprecated.Upload;
+import com.example.barstoolprinting.Deprecated.Old_Products;
+import com.example.barstoolprinting.Deprecated.Old_Upload;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -75,7 +75,7 @@ public class AdminProducts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mUploadTask != null && mUploadTask.isInProgress()) {
-                    Toast.makeText(AdminProducts.this, "Upload in progress", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminProducts.this, "Old_Upload in progress", Toast.LENGTH_SHORT).show();
                 } else {
                     uploadFile();
                 }
@@ -85,7 +85,7 @@ public class AdminProducts extends AppCompatActivity {
         mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminProducts.this, Products.class);
+                Intent intent = new Intent(AdminProducts.this, Old_Products.class);
                 intent.putExtra("edit", true);
                 startActivity(intent);
                 finish();
@@ -135,11 +135,11 @@ public class AdminProducts extends AppCompatActivity {
                                 }
                             }, 500);
 
-                            Toast.makeText(AdminProducts.this, "Upload successful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(AdminProducts.this, "Old_Upload successful", Toast.LENGTH_LONG).show();
                             fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
+                                    Old_Upload upload = new Old_Upload(mEditTextFileName.getText().toString().trim(),
                                             uri.toString(), mEditTextFileDescription.getText().toString().trim());
                                     String uploadId = mDatabaseRef.push().getKey();
                                     mDatabaseRef.child(uploadId).setValue(upload);

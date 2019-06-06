@@ -14,11 +14,11 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
+public class Old_ImageAdapter extends RecyclerView.Adapter<Old_ImageAdapter.ImageViewHolder> {
     private Context mContext;
-    private List<Upload> mUploads;
+    private List<Old_Upload> mUploads;
 
-    public ImageAdapter(Context context, List<Upload> uploads) {
+    public Old_ImageAdapter(Context context, List<Old_Upload> uploads) {
         mContext = context;
         mUploads = uploads;
     }
@@ -31,7 +31,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position) {
-        Upload uploadCurrent = mUploads.get(position);
+        Old_Upload uploadCurrent = mUploads.get(position);
         holder.textViewName.setText(uploadCurrent.getName());
         holder.textViewDescription.setText(uploadCurrent.getDescription());
         Picasso.with(mContext)

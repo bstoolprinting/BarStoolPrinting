@@ -50,7 +50,8 @@ public class AdminAbout extends AppCompatActivity {
                 File storageDir = AdminAbout.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
                 if(storageDir == null) throw new AssertionError("Cannot read " + Environment.DIRECTORY_PICTURES);
                 String path = storageDir.getAbsolutePath();
-                String fileName = path + getResources().getString(R.string.about_screen);
+                String fileName = path + getResources().getString(R.string.about_folder) + "/" +
+                        getResources().getString(R.string.screen_folder);
 
                 Picasso.with(AdminAbout.this)
                         .load(mImageUri.toString())

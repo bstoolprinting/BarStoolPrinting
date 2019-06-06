@@ -85,7 +85,7 @@ public class Home extends BaseActivity {
                                         @Override
                                         public void run() {
                                             if (_success) {
-                                                String[] to = new String[]{getResources().getString(R.string.myEmail)};
+                                                String[] to = new String[]{getResources().getString(R.string.app_email)};
                                                 String subject = "Join";
                                                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                                                 emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
@@ -148,29 +148,30 @@ public class Home extends BaseActivity {
 
         setImages();
     }
+
     private void setImages(){
-        setButtonImage(getResources().getString(R.string.products_folder),
-                getResources().getString(R.string.products_button),
+        setButtonImage(getResources().getString(R.string.products_folder) + "/" +
+                        getResources().getString(R.string.button_folder),
                 products);
 
-        setButtonImage(getResources().getString(R.string.about_folder),
-                getResources().getString(R.string.about_button),
+        setButtonImage(getResources().getString(R.string.about_folder) + "/" +
+                        getResources().getString(R.string.button_folder),
                 about);
 
-        setButtonImage(getResources().getString(R.string.join_folder),
-                getResources().getString(R.string.join_button),
+        setButtonImage(getResources().getString(R.string.join_folder) + "/" +
+                        getResources().getString(R.string.button_folder),
                 join);
 
-        setButtonImage(getResources().getString(R.string.retailers_folder),
-                getResources().getString(R.string.retailers_button),
+        setButtonImage(getResources().getString(R.string.retailers_folder) + "/" +
+                        getResources().getString(R.string.button_folder),
                 retailers);
 
-        setButtonImage(getResources().getString(R.string.shows_folder),
-                getResources().getString(R.string.shows_button),
+        setButtonImage(getResources().getString(R.string.shows_folder) + "/" +
+                        getResources().getString(R.string.button_folder),
                 shows);
 
-        setButtonImage(getResources().getString(R.string.fundraising_folder),
-                getResources().getString(R.string.fundraising_button),
+        setButtonImage(getResources().getString(R.string.fundraising_folder) + "/" +
+                        getResources().getString(R.string.button_folder),
                 fundraising);
     }
 

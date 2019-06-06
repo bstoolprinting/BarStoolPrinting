@@ -15,7 +15,7 @@ import com.example.barstoolprinting.Admin;
 import com.example.barstoolprinting.R;
 
 
-public class Directory extends AppCompatActivity {
+public class Old_Directory extends AppCompatActivity {
     private Button etsy;
     private Button products;
     private Button join;
@@ -32,10 +32,10 @@ public class Directory extends AppCompatActivity {
         etsy.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Uri uri = Uri.parse(getResources().getString(R.string.url));
+                Uri uri = Uri.parse(getResources().getString(R.string.etsy_url));
                 Intent openEtsy = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(openEtsy);
-                Toast.makeText(Directory.this, "Opening...", Toast.LENGTH_LONG).show();
+                Toast.makeText(Old_Directory.this, "Opening...", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -43,7 +43,7 @@ public class Directory extends AppCompatActivity {
         products.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Directory.this, Products.class);
+                Intent switchActivity = new Intent(Old_Directory.this, Old_Products.class);
                 startActivity(switchActivity);
             }
         });
@@ -52,11 +52,11 @@ public class Directory extends AppCompatActivity {
         join.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(final android.view.View v) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Directory.this);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Old_Directory.this);
                 alertDialog.setTitle("Email");
                 alertDialog.setMessage("Please enter your email");
 
-                final EditText input = new EditText(Directory.this);
+                final EditText input = new EditText(Old_Directory.this);
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
@@ -68,7 +68,7 @@ public class Directory extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String email = input.getText().toString();
                         if (email.length() > 0) {
-                            String[] to = new String[]{getResources().getString(R.string.myEmail)};
+                            String[] to = new String[]{getResources().getString(R.string.app_email)};
                             String subject = "Join";
                             Intent emailIntent = new Intent(Intent.ACTION_SEND);
                             emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
@@ -95,11 +95,11 @@ public class Directory extends AppCompatActivity {
         admin.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(final android.view.View v) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Directory.this);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Old_Directory.this);
                 alertDialog.setTitle("PASSWORD");
                 alertDialog.setMessage("Enter Password");
 
-                final EditText input = new EditText(Directory.this);
+                final EditText input = new EditText(Old_Directory.this);
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.MATCH_PARENT);
@@ -112,7 +112,7 @@ public class Directory extends AppCompatActivity {
                         String password = input.getText().toString();
                         if (password.length() > 0) {
                             if (password.contentEquals(getResources().getString(R.string.password))) {
-                                Intent switchActivity = new Intent(Directory.this, Admin.class);
+                                Intent switchActivity = new Intent(Old_Directory.this, Admin.class);
                                 startActivity(switchActivity);
                             } else {
                                 Toast.makeText(getApplicationContext(),

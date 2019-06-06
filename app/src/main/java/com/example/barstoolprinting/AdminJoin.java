@@ -46,7 +46,7 @@ public class AdminJoin extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     if (_success) {
-                                        String[] to = new String[]{getResources().getString(R.string.myEmail)};
+                                        String[] to = new String[]{getResources().getString(R.string.app_email)};
                                         String subject = "Join";
                                         Intent emailIntent = new Intent(Intent.ACTION_SEND);
                                         emailIntent.putExtra(Intent.EXTRA_EMAIL, to);

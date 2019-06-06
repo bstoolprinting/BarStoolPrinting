@@ -17,8 +17,8 @@ public class Retailers extends BaseActivity {
 
         image = findViewById(R.id.image);
 
-        boolean imageFound = setImage(getResources().getString(R.string.retailers_folder),
-                getResources().getString(R.string.retailers_screen),
+        boolean imageFound = setImage(getResources().getString(R.string.retailers_folder) + "/" +
+                        getResources().getString(R.string.screen_folder),
                 image);
 
         if(!imageFound){

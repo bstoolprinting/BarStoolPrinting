@@ -2,17 +2,17 @@ package com.example.barstoolprinting.Deprecated;
 
 import com.google.firebase.database.Exclude;
 
-public class Upload {
+public class Old_Upload {
     private String mName;
     private String mImageUrl;
     private String mDescription;
     private String mKey;
 
-    public Upload() {
+    public Old_Upload() {
         //empty constructor needed
     }
 
-    public Upload(String name, String imageUrl, String description) {
+    public Old_Upload(String name, String imageUrl, String description) {
         if (name.trim().equals("")) {
             name = "No Name";
         }

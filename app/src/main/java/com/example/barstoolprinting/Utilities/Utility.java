@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,16 +59,16 @@ public class Utility {
             throws IOException {
         // recurse
         final File[] srcFiles = srcDir.listFiles();
-        if (srcFiles == null) {  // null if abstract pathname does not denote a directory, or if an I/O error occurs
+        if (srcFiles == null) {  // null if abstract pathname does not denote a old_activity_directory, or if an I/O error occurs
             throw new IOException("Failed to list contents of " + srcDir);
         }
         if (destDir.exists()) {
             if (destDir.isDirectory() == false) {
-                throw new IOException("Destination '" + destDir + "' exists but is not a directory");
+                throw new IOException("Destination '" + destDir + "' exists but is not a old_activity_directory");
             }
         } else {
             if (!destDir.mkdirs() && !destDir.isDirectory()) {
-                throw new IOException("Destination '" + destDir + "' directory cannot be created");
+                throw new IOException("Destination '" + destDir + "' old_activity_directory cannot be created");
             }
         }
         if (destDir.canWrite() == false) {
@@ -90,7 +89,7 @@ public class Utility {
     private void doCopyFile(final File srcFile, final File destFile)
             throws IOException {
         if (destFile.exists() && destFile.isDirectory()) {
-            throw new IOException("Destination '" + destFile + "' exists but is a directory");
+            throw new IOException("Destination '" + destFile + "' exists but is a old_activity_directory");
         }
 
         FileOutputStream fos = null;
@@ -141,55 +140,35 @@ public class Utility {
         return mypath.getAbsolutePath();
     }
 
-    public String getURIOfFirstFileInInternalStorage(Context base, String directoryName) {
+    public String getURIOfFirstFileInInternalStorage(Context base, String directoryName, String rootFolder) {
         String uri = "";
+        File rootDir = new File(rootFolder);
         ContextWrapper cw = new ContextWrapper(base);
-        File directory = cw.getDir(directoryName, Context.MODE_PRIVATE);
+        File directory = cw.getDir(rootDir.getName(), Context.MODE_PRIVATE);
 
-        if(directory.isDirectory()){
-            for (File f : directory.listFiles()) {
-                if (f.isFile()) {
-                    uri = f.getAbsolutePath();
-                    break;
+        if(directory.exists() && directory.isDirectory()) {
+            File targetDir = new File(directory.getAbsolutePath() + "/" + directoryName);
+            if(targetDir.exists() && targetDir.isDirectory()) {
+                for (File f : targetDir.listFiles()) {
+                    if (f.isFile()) {
+                        uri = f.getAbsolutePath();
+                    }
                 }
             }
         }
         return uri;
     }
 
-    public String getURIOfFileInInternalStorage(Context base, String directoryName, String fileName) {
-        String uri = "";
-        ContextWrapper cw = new ContextWrapper(base);
-        File directory = cw.getDir(directoryName, Context.MODE_PRIVATE);
-
-        if(directory.isDirectory()){
-            for (File f : directory.listFiles()) {
-                if (f.isFile() && f.getName().contentEquals(fileName)) {
-                    uri = f.getAbsolutePath();
-                }
-            }
-        }
-        return uri;
-    }
-
-    public String getURIOfDirectoryInInternalStorage(Context base, String directoryName) {
-        String uri = "";
-        ContextWrapper cw = new ContextWrapper(base);
-        File directory = cw.getDir(directoryName, Context.MODE_PRIVATE);
-
-        if(directory.isDirectory()){
-            uri = directory.getAbsolutePath();
-        }
-        return uri;
-    }
-
-    public List<String> getURIOfAllFilesInInternalStorage(Context base, String directoryName) {
+    public List<String> getURIOfAllFilesInInternalStorage(Context base, String directoryName, String rootFolder) {
         List<String> list = new ArrayList<>();
+        File rootDir = new File(rootFolder);
         ContextWrapper cw = new ContextWrapper(base);
-        File directory = cw.getDir(directoryName, Context.MODE_PRIVATE);
+        File directory = cw.getDir(rootDir.getName(), Context.MODE_PRIVATE);
 
         if(directory.isDirectory()){
-            for (File f : directory.listFiles()) {
+            File targetDir = new File(directory.getAbsolutePath() + "/" + directoryName);
+
+            for (File f : targetDir.listFiles()) {
                 if (f.isFile()) {
                     list.add(f.getAbsolutePath());
                 }

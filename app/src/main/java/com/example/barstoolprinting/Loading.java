@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 import com.example.barstoolprinting.Utilities.Utility;
 
@@ -19,13 +20,16 @@ import java.io.File;
 public class Loading extends AppCompatActivity {
     private static final int REQUEST_CODE_READ_EXTERNAL_STORAGE_PERMISSION = 1;
     private static Utility utility;
+    private ProgressBar mProgressCircle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loading2);
+        setContentView(R.layout.activity_loading);
 
         utility = Utility.getInstance();
+
+        mProgressCircle = findViewById(R.id.progress_circle);
 
         askForReadPermission();
     }
@@ -58,7 +62,7 @@ public class Loading extends AppCompatActivity {
                 } else {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(Loading.this);
                     alertDialog.setTitle("Are you sure?");
-                    alertDialog.setMessage("You want to Bypass loading data from sdcard?");
+                    alertDialog.setMessage("You want to Bypass old_activity_loading data from sdcard?");
                     alertDialog.setIcon(R.drawable.stool_logo_orange);
 
                     alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {

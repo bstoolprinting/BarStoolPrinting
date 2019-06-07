@@ -4,21 +4,20 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Fundraising extends BaseActivity {
+public class SingleImage extends BaseActivity {
     private TextView text;
     private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.picture);
+        setContentView(R.layout.old_picture);
 
         Initialize();
 
         image = findViewById(R.id.image);
 
-        boolean imageFound = setImage(getResources().getString(R.string.fundraising_folder) + "/" +
-                        getResources().getString(R.string.screen_folder),
+        boolean imageFound = setImage(getIntent().getStringExtra(getResources().getString(R.string.screen_uri)),
                 image);
 
         if(!imageFound){
@@ -26,7 +25,7 @@ public class Fundraising extends BaseActivity {
         }
 
         text = findViewById(R.id.text);
-        text.setText(getResources().getString(R.string.title_fundraising));
+        text.setText(getIntent().getStringExtra(getResources().getString(R.string.text_message)));
     }
 
     protected void home(){

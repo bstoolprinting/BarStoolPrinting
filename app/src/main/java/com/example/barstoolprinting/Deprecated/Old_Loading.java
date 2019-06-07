@@ -26,7 +26,7 @@ public class Old_Loading extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loading);
+        setContentView(R.layout.old_activity_loading);
 
         utility = Utility.getInstance();
 
@@ -58,7 +58,7 @@ public class Old_Loading extends AppCompatActivity {
                 } else {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(Old_Loading.this);
                     alertDialog.setTitle("Load SD card data");
-                    alertDialog.setMessage("Are you sure you want to Bypass loading data from sdcard?");
+                    alertDialog.setMessage("Are you sure you want to Bypass old_activity_loading data from sdcard?");
                     alertDialog.setIcon(R.drawable.stool_logo_orange);
 
                     alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {

@@ -45,6 +45,7 @@
     <string name="mugs_folder">mugs</string>
     <string name="other_folder">other</string>
     <string name="photo_slate_folder">photo_slate</string>
+    <string name="images_folder">images</string>
     <string name="category_pref">category</string>
     <string name="bottle">bottle</string>
     <string name="coasters">coasters</string>
@@ -57,4 +58,6 @@
     <string name="retailers">retailers</string>
     <string name="shows">shows</string>
     <string name="fundraising">fundraising</string>
+    <string name="screen_uri">screen_uri</string>
+    <string name="text_message">text_message</string>
 </resources>

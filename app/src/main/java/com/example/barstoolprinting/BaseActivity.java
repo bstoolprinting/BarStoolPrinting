@@ -17,7 +17,7 @@ import com.example.barstoolprinting.Utilities.NetworkStatus;
 import com.example.barstoolprinting.Utilities.Utility;
 import com.squareup.picasso.Picasso;
 
-abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
     protected SharedPreferences settings;
     protected SharedPreferences.Editor editor;
     protected static NetworkStatus networkStatus;
@@ -34,7 +34,7 @@ abstract class BaseActivity extends AppCompatActivity {
         navigation = findViewById(R.id.navigation);
 
         setImage(getResources().getString(R.string.banner_folder) + "/" +
-                        getResources().getString(R.string.button_folder),
+                        getResources().getString(R.string.screen_folder),
                 banner);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -88,23 +88,12 @@ abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void home();
 
-    protected boolean setImage(String folderName, String imageName, ImageView view) {
-        String uri = utility.getURIOfFileInInternalStorage(BaseActivity.this,
-                folderName,
-                imageName);
-
-        if(!uri.isEmpty()) {
-            Picasso.with(BaseActivity.this).load("file://" + uri).into(view);
-            return true;
-        }
-        return false;
-    }
-
     protected boolean setImage(String folderName, ImageView view) {
         String uri = utility.getURIOfFirstFileInInternalStorage(BaseActivity.this,
-                folderName);
+                folderName,
+                getResources().getString(R.string.root_folder));
 
-        if(!uri.isEmpty()) {
+        if (!uri.isEmpty()) {
             Picasso.with(BaseActivity.this).load("file://" + uri).into(view);
             return true;
         }
@@ -113,7 +102,8 @@ abstract class BaseActivity extends AppCompatActivity {
 
     protected boolean setButtonImage(String folderName, ImageView view) {
         String uri = utility.getURIOfFirstFileInInternalStorage(BaseActivity.this,
-                folderName);
+                folderName,
+                getResources().getString(R.string.root_folder));
 
         if(!uri.isEmpty()) {
             Picasso.with(BaseActivity.this).load("file://" + uri).fit().into(view);

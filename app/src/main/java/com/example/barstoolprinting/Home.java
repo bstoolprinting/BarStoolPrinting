@@ -27,7 +27,7 @@ public class Home extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.activity_home);
 
         Initialize();
 
@@ -43,7 +43,7 @@ public class Home extends BaseActivity {
         products.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Home.this, ProductsSDCard.class);
+                Intent switchActivity = new Intent(Home.this, Products.class);
                 startActivity(switchActivity);
             }
         });
@@ -52,7 +52,11 @@ public class Home extends BaseActivity {
         about.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Home.this, About.class);
+                Intent switchActivity = new Intent(Home.this, SingleImage.class);
+                String about_uri = getResources().getString(R.string.about_folder) + "/" +
+                        getResources().getString(R.string.screen_folder);
+                switchActivity.putExtra(getResources().getString(R.string.screen_uri), about_uri);
+                switchActivity.putExtra(getResources().getString(R.string.text_message), getResources().getString(R.string.title_about));
                 startActivity(switchActivity);
             }
         });
@@ -123,7 +127,11 @@ public class Home extends BaseActivity {
         retailers.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Home.this, Retailers.class);
+                Intent switchActivity = new Intent(Home.this, SingleImage.class);
+                String about_uri = getResources().getString(R.string.retailers_folder) + "/" +
+                        getResources().getString(R.string.screen_folder);
+                switchActivity.putExtra(getResources().getString(R.string.screen_uri), about_uri);
+                switchActivity.putExtra(getResources().getString(R.string.text_message), getResources().getString(R.string.title_retailers));
                 startActivity(switchActivity);
             }
         });
@@ -132,7 +140,11 @@ public class Home extends BaseActivity {
         shows.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Home.this, Shows.class);
+                Intent switchActivity = new Intent(Home.this, SingleImage.class);
+                String about_uri = getResources().getString(R.string.shows_folder) + "/" +
+                        getResources().getString(R.string.screen_folder);
+                switchActivity.putExtra(getResources().getString(R.string.screen_uri), about_uri);
+                switchActivity.putExtra(getResources().getString(R.string.text_message), getResources().getString(R.string.title_shows));
                 startActivity(switchActivity);
             }
         });
@@ -141,7 +153,11 @@ public class Home extends BaseActivity {
         fundraising.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Home.this, Fundraising.class);
+                Intent switchActivity = new Intent(Home.this, SingleImage.class);
+                String about_uri = getResources().getString(R.string.fundraising_folder) + "/" +
+                        getResources().getString(R.string.screen_folder);
+                switchActivity.putExtra(getResources().getString(R.string.screen_uri), about_uri);
+                switchActivity.putExtra(getResources().getString(R.string.text_message), getResources().getString(R.string.title_fundraising));
                 startActivity(switchActivity);
             }
         });
@@ -176,4 +192,8 @@ public class Home extends BaseActivity {
     }
 
     protected void home(){}
+
+    @Override
+    public void onBackPressed() {
+    }
 }

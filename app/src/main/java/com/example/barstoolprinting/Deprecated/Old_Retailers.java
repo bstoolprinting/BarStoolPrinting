@@ -1,17 +1,20 @@
-package com.example.barstoolprinting;
+package com.example.barstoolprinting.Deprecated;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Retailers extends BaseActivity {
+import com.example.barstoolprinting.BaseActivity;
+import com.example.barstoolprinting.R;
+
+public class Old_Retailers extends BaseActivity {
     private TextView text;
     private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.picture);
+        setContentView(R.layout.old_picture);
 
         Initialize();
 

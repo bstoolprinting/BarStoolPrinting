@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/RootLayout">
+
+    <include layout="@layout/banner_layout"/>
+
+    <LinearLayout style="@style/VerticalLayout">
+
+        <TextView
+            android:id="@+id/text"
+            android:text="TBD"
+            style="@style/BigTextView"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:contentDescription="Picture"
+            style="@style/FullScreenImage"/>
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        app:menu="@menu/navigation"
+        style="@style/BottomNavigation"/>
+</RelativeLayout>

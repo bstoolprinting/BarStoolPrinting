@@ -19,7 +19,6 @@ import java.util.List;
 public class Category extends AppCompatActivity {
     private static long FINISH_TIMEOUT_IN_MILLIS = 30000;
     private static long ALERT_TIMEOUT_IN_MILLIS = 60000;
-    private String categoryPath;
     private static Utility utility;
     private List<String> pathsToImages;
     private RecyclerView.Adapter mAdapter;
@@ -65,10 +64,14 @@ public class Category extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category);
 
-        categoryPath = getIntent().getStringExtra(getResources().getString(R.string.category_pref));
+        String categoryPath = getResources().getString(R.string.products_folder) + "/" +
+                getResources().getString(R.string.categories_folder) + "/" +
+                getIntent().getStringExtra(getResources().getString(R.string.category_pref)) + "/" +
+            getResources().getString(R.string.images_folder);
         utility = Utility.getInstance();
         pathsToImages = new ArrayList<>();
-        List<String> files = utility.getURIOfAllFilesInInternalStorage(getApplicationContext(), categoryPath);
+        List<String> files = utility.getURIOfAllFilesInInternalStorage(getApplicationContext(), categoryPath,
+                getResources().getString(R.string.root_folder));
         for(String fileUri: files){
             pathsToImages.add(fileUri);
         }

@@ -13,17 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".SingleImage"></activity>
         <activity android:name=".Admin" />
         <activity android:name=".Category" />
-        <activity android:name=".ProductsSDCard" />
+        <activity android:name=".Products" />
         <activity android:name=".AdminRetailers" />
         <activity android:name=".AdminJoin" />
         <activity android:name=".AdminAbout" />
         <activity android:name=".AdminProducts" />
-        <activity android:name=".Retailers" />
-        <activity android:name=".About" />
-        <activity android:name=".Shows" />
-        <activity android:name=".Fundraising" />
         <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

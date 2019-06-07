@@ -26,7 +26,7 @@ public class Old_Directory extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.directory);
+        setContentView(R.layout.old_activity_directory);
 
         etsy = findViewById(R.id.etsy);
         etsy.setOnClickListener(new android.view.View.OnClickListener() {

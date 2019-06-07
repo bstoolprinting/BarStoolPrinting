@@ -49,7 +49,7 @@ public class Old_Products extends AppCompatActivity implements Old_EditImageAdap
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.products);
+        setContentView(R.layout.old_activity_products);
 
         settings = getSharedPreferences(getResources().getString(R.string.app_name), 0);
         editor = settings.edit();

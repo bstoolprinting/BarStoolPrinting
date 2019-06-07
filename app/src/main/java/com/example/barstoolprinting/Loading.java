@@ -92,7 +92,7 @@ public class Loading extends AppCompatActivity {
         } else {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(Loading.this);
             alertDialog.setTitle(rootFolderPath + " not found!");
-            alertDialog.setMessage("Old_Loading with internal files");
+            alertDialog.setMessage("Loading with internal files");
             alertDialog.setIcon(R.drawable.stool_logo_orange);
 
             alertDialog.setPositiveButton("Continue", new DialogInterface.OnClickListener() {

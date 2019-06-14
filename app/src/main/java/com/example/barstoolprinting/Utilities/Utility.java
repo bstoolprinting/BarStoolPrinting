@@ -2,6 +2,7 @@ package com.example.barstoolprinting.Utilities;
 
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.os.Environment;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -175,5 +176,34 @@ public class Utility {
             }
         }
         return list;
+    }
+
+    public File getRootFolder(File _directory) {
+        File parent = _directory.getParentFile();
+        if((parent != null) && parent.isDirectory()) {
+            return getRootFolder(parent);
+        }
+        return _directory;
+    }
+
+    public File getDataFolder(File _directory, String dataFolder, int depth) {
+        if(depth > 0) {
+            if (_directory.isDirectory()) {
+                if (_directory.getName().contentEquals(dataFolder)) {
+                    return _directory;
+                }
+                File[] files = _directory.listFiles();
+                if(files != null) {
+                    for (File f : files) {
+                        depth--;
+                        File result = getDataFolder(f, dataFolder, depth);
+                        if (result != null)
+                            return result;
+                    }
+                }
+            }
+            return null;
+        }
+        return null;
     }
 }

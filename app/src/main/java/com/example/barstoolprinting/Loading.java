@@ -87,15 +87,16 @@ public class Loading extends AppCompatActivity {
     }
 
     private void save() {
-        String rootFolderPath = Environment.getExternalStorageDirectory().toString() + "/" + getResources().getString(R.string.root_folder);
-        File rootFolder = new File(rootFolderPath);
-        if (rootFolder.isDirectory()) {
-            utility.saveAllFilesToInternalStorage(getApplicationContext(), rootFolder);
+        File rootFolder = utility.getRootFolder(Environment.getExternalStorageDirectory());
+        File dataFolder = utility.getDataFolder(rootFolder, getResources().getString(R.string.root_folder), 20);
+        if(dataFolder != null) {
+            utility.saveAllFilesToInternalStorage(getApplicationContext(), dataFolder);
             Intent switchActivity = new Intent(Loading.this, Home.class);
             startActivity(switchActivity);
-        } else {
+        }
+        else {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(Loading.this);
-            alertDialog.setTitle(rootFolderPath + " not found!");
+            alertDialog.setTitle(dataFolder.getAbsolutePath() + " not found!");
             alertDialog.setMessage("Loading with internal files");
             alertDialog.setIcon(R.drawable.stool_logo_orange);
 

@@ -77,7 +77,8 @@ public class Utility {
         }
         for (final File srcFile : srcFiles) {
             final File dstFile = new File(destDir, srcFile.getName());
-            if (exclusionList == null || !exclusionList.contains(srcFile.getCanonicalPath())) {
+            if (!srcFile.getName().startsWith("._") &&
+                    (exclusionList == null || !exclusionList.contains(srcFile.getCanonicalPath()))) {
                 if (srcFile.isDirectory()) {
                     doCopyDirectory(srcFile, dstFile, exclusionList);
                 } else {

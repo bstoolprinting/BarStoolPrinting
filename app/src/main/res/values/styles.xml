@@ -41,7 +41,7 @@
     </style>
 
     <style name="ImageButton">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">@dimen/button_width_size</item>
         <item name="android:layout_height">@dimen/button_height_size</item>
         <item name="android:background">@drawable/custom_button</item>
         <item name="android:textColor">@color/colorTextOnPrimary</item>
@@ -52,11 +52,12 @@
         <item name="android:layout_height">@dimen/button_text_max_height_size</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/colorTextOnBackground</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
     </style>
 
     <style name="BottomNavigation">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">@dimen/navigation_height_size</item>
         <item name="android:layout_gravity">bottom</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:background">@color/colorPrimary</item>

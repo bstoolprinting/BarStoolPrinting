@@ -33,8 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         banner = findViewById(R.id.banner);
         navigation = findViewById(R.id.navigation);
 
-        setImage(getResources().getString(R.string.banner_folder) + "/" +
-                        getResources().getString(R.string.screen_folder),
+        setImage(getResources().getString(R.string.banner_folder) + "/" + getResources().getString(R.string.screen_folder),
                 banner);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -92,6 +91,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         String uri = utility.getURIOfFirstFileInInternalStorage(BaseActivity.this,
                 folderName,
                 getResources().getString(R.string.root_folder));
+
+        System.out.println("Hiram: " + uri);
 
         if (!uri.isEmpty()) {
             Picasso.with(BaseActivity.this).load("file://" + uri).into(view);

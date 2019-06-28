@@ -11,7 +11,7 @@ public class SingleImage extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.old_picture);
+        setContentView(R.layout.single_image);
 
         Initialize();
 

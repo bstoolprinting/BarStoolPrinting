@@ -44,13 +44,20 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ImageV
         return mUploads.size();
     }
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder {
+    public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView imageView;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.image_view_upload);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+
         }
     }
 }

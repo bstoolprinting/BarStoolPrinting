@@ -20,7 +20,6 @@
         <activity android:name=".AdminRetailers" />
         <activity android:name=".AdminJoin" />
         <activity android:name=".AdminAbout" />
-        <activity android:name=".AdminProducts" />
         <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

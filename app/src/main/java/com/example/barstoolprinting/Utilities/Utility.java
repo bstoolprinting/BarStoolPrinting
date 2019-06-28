@@ -30,7 +30,25 @@ public class Utility {
     public void saveAllFilesToInternalStorage(Context base, File source) {
         ContextWrapper cw = new ContextWrapper(base);
         File destination = cw.getDir(source.getName(), Context.MODE_PRIVATE);
+        if (destination.isDirectory())
+        {
+            deleteFolder(destination);
+        }
         copyDirectory(source, destination);
+    }
+
+    public static void deleteFolder(File folder) {
+        File[] files = folder.listFiles();
+        if(files!=null) { //some JVMs return null for empty dirs
+            for(File f: files) {
+                if(f.isDirectory()) {
+                    deleteFolder(f);
+                } else {
+                    f.delete();
+                }
+            }
+        }
+        folder.delete();
     }
 
     private void copyDirectory(File srcDir, File destDir) {

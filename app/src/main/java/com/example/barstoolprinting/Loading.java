@@ -74,7 +74,6 @@ public class Loading extends AppCompatActivity {
 
                     alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            mProgressCircle.setVisibility(View.INVISIBLE);
                             Intent switchActivity = new Intent(Loading.this, Home.class);
                             startActivity(switchActivity);
                         }
@@ -99,7 +98,6 @@ public class Loading extends AppCompatActivity {
         File dataFolder = utility.getDataFolder(rootFolder, getResources().getString(R.string.root_folder), 20);
         if(dataFolder != null) {
             utility.saveAllFilesToInternalStorage(getApplicationContext(), dataFolder);
-            mProgressCircle.setVisibility(View.INVISIBLE);
             Intent switchActivity = new Intent(Loading.this, Home.class);
             startActivity(switchActivity);
         }
@@ -112,7 +110,6 @@ public class Loading extends AppCompatActivity {
             alertDialog.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
-                    mProgressCircle.setVisibility(View.INVISIBLE);
                     Intent switchActivity = new Intent(Loading.this, Home.class);
                     startActivity(switchActivity);
                 }
@@ -120,5 +117,12 @@ public class Loading extends AppCompatActivity {
 
             alertDialog.show();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        // call the superclass method first
+        super.onDestroy();
+        mProgressCircle.setVisibility(View.INVISIBLE);
     }
 }

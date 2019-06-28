@@ -19,15 +19,6 @@ public class Admin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin);
 
-        admin_products = findViewById(R.id.admin_products);
-        admin_products.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                Intent switchActivity = new Intent(Admin.this, AdminProducts.class);
-                startActivity(switchActivity);
-            }
-        });
-
         admin_about = findViewById(R.id.admin_about);
         admin_about.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
